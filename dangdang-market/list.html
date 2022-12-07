@@ -7,19 +7,14 @@
       integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
       crossorigin="anonymous"
     />
-    <!-- <script
-      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script> -->
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
     <script
-      src="https://code.jquery.com/jquery-3.6.1.min.js"
-      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="./css/styles.css" />
@@ -28,7 +23,7 @@
   <body>
     <div class="product-list">
       <ul class="list-group list-group-flush">
-        <li id="post-1" class="list-group-item">
+        <li id="post-1" data-id="1" class="list-group-item">
           <div class="media">
             <img
               src="./image/prod1.jpg"
@@ -44,7 +39,7 @@
             </div>
           </div>
         </li>
-        <li class="list-group-item">
+        <li id="post-2" data-id="2" class="list-group-item">
           <div class="media">
             <img
               src="./image/prod2.jpg"
@@ -60,7 +55,7 @@
             </div>
           </div>
         </li>
-        <li class="list-group-item">
+        <li id="post-3" data-id="3" class="list-group-item">
           <div class="media">
             <img
               src="./image/prod3.jpg"
@@ -76,7 +71,7 @@
             </div>
           </div>
         </li>
-        <li class="list-group-item">
+        <li id="post-4" data-id="4" class="list-group-item">
           <div class="media">
             <img
               src="./image/prod4.jpg"
@@ -93,6 +88,40 @@
           </div>
         </li>
       </ul>
+    </div>
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"></h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="modalContent"></div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              확인
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
