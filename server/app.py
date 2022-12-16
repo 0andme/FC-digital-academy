@@ -1,11 +1,12 @@
-from flask import Flask
+from flask import Flask,render_template
 
 app = Flask(__name__)
 
 #  / 경로일 때 hello_world 함수가 실행
+# render_template 함수를 통해 외부 html 파일을 실행
 @app.route('/')
 def hello_world():
-    return 'Hello World!'
+    return render_template("hello_world.html")
 
 #  /fc 경로에서 fast_campus 함수가 실행
 @app.route('/fc')
