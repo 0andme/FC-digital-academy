@@ -1,4 +1,4 @@
-from flask import Flask,render_template
+from flask import Flask,render_template,jsonify
 
 app = Flask(__name__)
 
@@ -11,7 +11,15 @@ def hello_world():
 #  /fc 경로에서 fast_campus 함수가 실행
 @app.route('/fc')
 def fast_campus():
-    return 'fc'
+  res = []
+  for i in range(10):
+    res.append({
+      'title':str(i)+'title'
+    })
+  return jsonify(res)
+
+  
+  
 
 # 파이썬 파일을 직접 실행했다면 app을 실행하라는 뜻
 # 해당 파일이 다른 곳에서도 사용되는 경우도 있음.
