@@ -144,3 +144,20 @@ body {
   color: #fff;
   font-weight: bold;
 }
+
+.guestbook-row table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.guestbook-row table tr {
+  background: #fff;
+  border-bottom: solid 1px #aaa;
+}
+
+.guestbook-row table td {
+  padding: 5px 10px;
+}
+
+.guestbook-row table td.content {
+  white-space: pre;
+}
