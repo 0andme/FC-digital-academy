@@ -63,69 +63,81 @@
           </tbody>
         </table>
       </div>
-      <div class="row">
-        <table>
+      <div class="row2">
+        <h3>12월 19일</h3>
+        <h5>오후 2시</h5>
+        <hr />
+        <table class="calendar">
           <thead>
             <tr>
-              <td>일</td>
+              <td class="sun">일</td>
               <td>월</td>
               <td>화</td>
               <td>수</td>
               <td>목</td>
               <td>금</td>
-              <td>토</td>
+              <td class="sat">토</td>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>27</td>
-              <td>28</td>
-              <td>29</td>
-              <td>30</td>
+              <td class="out">27</td>
+              <td class="out">28</td>
+              <td class="out">29</td>
+              <td class="out">30</td>
               <td>1</td>
               <td>2</td>
               <td>3</td>
             </tr>
             <tr>
-              <td>4</td>
+              <td class="sun">4</td>
               <td>5</td>
               <td>6</td>
               <td>7</td>
               <td>8</td>
               <td>9</td>
-              <td>10</td>
+              <td class="sat">10</td>
             </tr>
             <tr>
-              <td>11</td>
+              <td class="sun">11</td>
               <td>12</td>
               <td>13</td>
               <td>14</td>
               <td>15</td>
               <td>16</td>
-              <td>17</td>
+              <td class="sat">17</td>
             </tr>
             <tr>
-              <td>18</td>
+              <td class="sun">18</td>
               <td>19</td>
               <td>20</td>
               <td>21</td>
               <td>22</td>
               <td>23</td>
-              <td>24</td>
+              <td class="sat">24</td>
             </tr>
             <tr>
-              <td>25</td>
+              <td class="sun">25</td>
               <td>26</td>
               <td>27</td>
               <td>28</td>
               <td>29</td>
               <td>30</td>
-              <td>31</td>
+              <td class="sat">31</td>
             </tr>
           </tbody>
         </table>
+        <p>철수&hearts;영희의 결혼식이 {{diff}}일 남았습니다</p>
+        <hr />
       </div>
-      <div class="row">행4</div>
+      <div class="row guestbook-row">
+        <h2>방명록 남기기</h2>
+        <form class="guestbook" method="POST" action="/write">
+          <input type="text" name="name" placeholder="이름" />
+          <textarea name="content" rows="3" placeholder="내용"></textarea>
+          <button type="submit">남기기</button>
+        </form>
+      </div>
     </div>
   </body>
 </html>
