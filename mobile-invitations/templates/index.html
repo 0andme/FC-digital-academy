@@ -147,6 +147,11 @@
             {% endfor %}
           </tbody>
         </table>
+        <div class="pagination">
+          {% for p in pages %}
+          <a href="/?page={{p}}">{{p}}</a>
+          {% endfor %}
+        </div>
       </div>
     </div>
   </body>
