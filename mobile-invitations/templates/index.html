@@ -137,6 +137,16 @@
           <textarea name="content" rows="3" placeholder="내용"></textarea>
           <button type="submit">남기기</button>
         </form>
+        <table>
+          <tbody>
+            {% for gb in guestbooks %}
+            <tr>
+              <td>{{gb.name}}</td>
+              <td class="content">{{gb.content}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
       </div>
     </div>
   </body>
