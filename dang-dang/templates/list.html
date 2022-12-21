@@ -7,90 +7,55 @@
       integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
       crossorigin="anonymous"
     />
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="./styles.css" />
-    <script>
-      $(document).ready(function () {
-        $(".list-group-item").click(function () {
-          let id = $(this).attr("id");
-
-          let url = "https://jsonplaceholder.typicode.com/posts/" + id;
-
-          $.get(url).then(function (data) {
-            $("#exampleModalLabel").text(data.title);
-            $("#modalContent").text(data.body);
-            $("#exampleModal").modal("show");
-          });
-        });
-      });
-    </script>
+    <link rel="stylesheet" href="/static/styles.css" />
+    <script src="/static/scripts.js"></script>
   </head>
   <body>
     <div class="product-list">
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item" id="1">
+      <div class="list-group list-group-flush">
+        {% for product in products %}
+        <button
+          type="button"
+          class="list-group-item list-group-item-action"
+          id="{{ product.title }}"
+        >
           <div class="media">
-            <img src="./prod1.jpg" class="mr-2 product-image" />
+            <img src="/static/prod1.jpg" class="mr-2 product-image" />
             <div class="media-body">
-              <strong>장난감 블록</strong><br />
-              <small>성수동</small><br />
-              <span>20,000원</span>
+              <strong>{{ product.title }}</strong><br />
+              <small>{{ product.location }}</small><br />
+              <span>{{ product.price }}원</span>
             </div>
           </div>
-        </li>
-        <li class="list-group-item" id="2">
-          <div class="media">
-            <img src="./prod2.jpg" class="mr-2 product-image" />
-            <div class="media-body">
-              <strong>곰인형</strong><br />
-              <small>성수동</small><br />
-              <span>50,000원</span>
-            </div>
-          </div>
-        </li>
-        <li class="list-group-item" id="3">
-          <div class="media">
-            <img src="./prod3.jpg" class="mr-2 product-image" />
-            <div class="media-body">
-              <strong>곰인형2</strong><br />
-              <small>장안동</small><br />
-              <span>9,000원</span>
-            </div>
-          </div>
-        </li>
-        <li class="list-group-item" id="4">
-          <div class="media">
-            <img src="./prod4.jpg" class="mr-2 product-image" />
-            <div class="media-body">
-              <strong>곰인형3</strong><br />
-              <small>고잔동</small><br />
-              <span>30,000원</span>
-            </div>
-          </div>
-        </li>
-      </ul>
+        </button>
+        {% endfor %}
+      </div>
     </div>
+
+    <div class="product-btn">
+      <a role="button" href="/writepage" class="btn btn-primary btn-block"
+        >상품 등록</a
+      >
+    </div>
+
     <!-- Modal -->
     <div
-      class="modal fade"
-      id="exampleModal"
+      class="modal fade modal-dialog modal-dialog-centered"
+      id="detailModal"
       tabindex="-1"
-      aria-labelledby="exampleModalLabel"
+      aria-labelledby="detailModalLabel"
       aria-hidden="true"
     >
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel"></h5>
+            <h5 class="modal-title" id="detailModalLabel"></h5>
             <button
               type="button"
               class="close"
@@ -100,13 +65,9 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body" id="modalContent"></div>
+          <div class="modal-body" id="detailModalContent"></div>
           <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-dismiss="modal"
-            >
+            <button type="button" class="btn btn-primary" data-dismiss="modal">
               확인
             </button>
           </div>
