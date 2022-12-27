@@ -17,6 +17,7 @@
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 img {
@@ -187,4 +188,8 @@ body {
 
 .root_daum_roughmap {
   width: 100% !important;
+}
+
+.slick-slide {
+  height: auto !important;
 }
