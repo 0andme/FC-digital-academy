@@ -184,3 +184,7 @@ body {
   border-radius: 50%;
   filter: drop-shadow(0 0 10px white);
 }
+
+.root_daum_roughmap {
+  width: 100% !important;
+}
