@@ -5,7 +5,7 @@ $(document).ready(function () {
       result
     ) {
       $("#detailModalLabel").text(result.title);
-      $("#detailModalContent").text(result.content);
+      $("#detailModalContent").html(result.content);
       $("#detailModal").modal("show");
     });
   });
