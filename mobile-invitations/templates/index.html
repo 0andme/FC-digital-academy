@@ -46,6 +46,12 @@
         $(".gallery").slick({
           adaptiveHeight: true,
         });
+
+        $(".gallery-image").click(function () {
+          let src = $(this).attr("src");
+          $("#modal-image").attr("src", src);
+          $("#exampleModal").modal("show");
+        });
       });
     </script>
   </head>
@@ -275,11 +281,33 @@
       <div class="row2">
         <h4>갤러리</h4>
         <div class="gallery">
-          <img src="/static/a.jpg" />
-          <img src="/static/b.jpg" />
-          <img src="/static/c.jpg" />
-          <img src="/static/d.jpg" />
-          <img src="/static/e.jpg" />
+          <img src="/static/a.jpg" class="gallery-image" />
+          <img src="/static/b.jpg" class="gallery-image" />
+          <img src="/static/c.jpg" class="gallery-image" />
+          <img src="/static/d.jpg" class="gallery-image" />
+          <img src="/static/e.jpg" class="gallery-image" />
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <img id="modal-image" />
+          <div class="mymodal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
         </div>
       </div>
     </div>
