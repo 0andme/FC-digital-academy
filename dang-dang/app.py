@@ -1,3 +1,4 @@
+import os
 from flask import Flask,render_template,jsonify,request,redirect
 from flask_pymongo import PyMongo
 
@@ -34,12 +35,20 @@ def writepage():
 # write
 @app.route('/write',methods=['POST'])
 def write():
+  fileinfo= request.files['image']
+  
+  filepath=os.path.dirname(os.path.abspath(__file__))
+  filepath=os.path.join(filepath,'static')
+  fileinfo.save(os.path.join(filepath,fileinfo.filename))
+
   product_db=mongo.db.product
+  
   product_db.insert_one({
     'title':request.form.get('title'),
     'content':request.form.get('content'),
     'price':request.form.get('price'),
-    'location':request.form.get('location')
+    'location':request.form.get('location'),
+    'image':fileinfo.filename
   })
   
   return redirect('/')
