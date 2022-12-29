@@ -11,9 +11,8 @@
 .product-wrap #main-title {
   color: #fff;
   padding: 10px 0;
-  margin: 10px 20px 0;
+  margin: 20px 0;
   background: var(--main);
-  border-radius: 10px;
   text-align: center;
 }
 .product-list {
