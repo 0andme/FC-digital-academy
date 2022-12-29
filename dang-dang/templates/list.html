@@ -24,33 +24,33 @@
     <script src="/static/scripts.js"></script>
   </head>
   <body>
-    <div class="product-list">
-      <div class="list-group list-group-flush">
-        {% for product in products %}
-        <button
-          type="button"
-          class="list-group-item list-group-item-action"
-          id="{{ product.title }}"
-        >
-          <div class="media">
-            {% if product.image %}
-            <img src="/static/{{product.image}}" class="mr-2 product-image" />
-            {% else %}
-            <img src="/static/prod1.jpg" class="mr-2 product-image" />
-
-            {% endif %}
-            <div class="media-body">
-              <strong>{{ product.title }}</strong><br />
-              <small>{{ product.location }}</small><br />
-              <span>{{ product.price }}원</span>
+    <div class="product-wrap">
+      <h4 id="main-title">당당 마켓</h4>
+      <div class="product-list">
+        <div class="list-group list-group-flush">
+          {% for product in products %}
+          <button
+            type="button"
+            class="list-group-item list-group-item-action"
+            id="{{ product.title }}"
+          >
+            <div class="media">
+              {% if product.image %}
+              <img src="/static/{{product.image}}" class="mr-2 product-image" />
+              {% else %}
+              <img src="/static/prod1.jpg" class="mr-2 product-image" />
+              {% endif %}
+              <div class="media-body">
+                <strong>{{ product.title }}</strong><br />
+                <small>{{ product.location }}</small><br />
+                <span>{{ product.price }}원</span>
+              </div>
             </div>
-          </div>
-        </button>
-        {% endfor %}
+          </button>
+          {% endfor %}
+        </div>
       </div>
-    </div>
-
-    <div class="product-btn">
+      <div class="product-btn"></div>
       <a role="button" href="/writepage" class="btn btn-primary btn-block"
         >상품 등록</a
       >
