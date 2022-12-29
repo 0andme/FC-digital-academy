@@ -164,6 +164,7 @@ body {
 }
 
 .pagination {
+  justify-content: center;
   margin-top: 20px;
 }
 .pagination a {
