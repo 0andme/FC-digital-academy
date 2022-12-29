@@ -11,6 +11,7 @@ mongo=PyMongo(app)
 # index
 @app.route('/')
 def index():
+  # db조회
   product_db=mongo.db.product
   products=product_db.find()
   return render_template('list.html',products=products)
@@ -42,7 +43,7 @@ def write():
   fileinfo.save(os.path.join(filepath,fileinfo.filename))
 
   product_db=mongo.db.product
-  
+  # db에 추가
   product_db.insert_one({
     'title':request.form.get('title'),
     'content':request.form.get('content'),
